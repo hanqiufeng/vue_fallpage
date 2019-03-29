@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/fullpage.js/dist/fullpage.min.css"
+    />
+    <!-- bootstrap 引入 -->
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+      <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- jquery 引入 -->
+    <!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
+    <title>单页面</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./static/favicon.ico" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* 以下是等待加载样式 */
+      .spinner {
+        width: 60px;
+        height: 60px;
+        background-color: #5cb7ff;
+        margin: 200px auto;
+        -webkit-animation: rotateplane 1.2s infinite ease-in-out;
+        animation: rotateplane 1.2s infinite ease-in-out;
+      }
+      @-webkit-keyframes rotateplane {
+        0% {
+          -webkit-transform: perspective(120px);
+        }
+        50% {
+          -webkit-transform: perspective(120px) rotateY(180deg);
+        }
+        100% {
+          -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+        }
+      }
+      @keyframes rotateplane {
+        0% {
+          transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+          -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        }
+        50% {
+          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+        }
+        100% {
+          transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+          -webkit-transform: perspective(120px) rotateX(-180deg)
+            rotateY(-179.9deg);
+        }
+      }
+      /* 字体缩放 */
+      /* @media screen and (min-width: 321px) and (max-width: 375px) {
+        html {
+          font-size: 11px;
+        }
+      }
+      @media screen and (min-width: 376px) and (max-width: 414px) {
+        html {
+          font-size: 12px;
+        }
+      }
+      @media screen and (min-width: 415px) and (max-width: 639px) {
+        html {
+          font-size: 15px;
+        }
+      }
+      @media screen and (min-width: 640px) and (max-width: 719px) {
+        html {
+          font-size: 20px;
+        }
+      }
+      @media screen and (min-width: 720px) and (max-width: 749px) {
+        html {
+          font-size: 22.5px;
+        }
+      }
+      @media screen and (min-width: 750px) and (max-width: 799px) {
+        html {
+          font-size: 23.5px;
+        }
+      } */
+    </style>
+    <!-- 发布配置文件引用打包时须打开 -->
+  </head>
+
+  <body>
+    <div class="spinner" id="hyq-spinner"></div>
+    <div id="app"></div>
+    <script>
+      //得到当前屏幕的宽度
+      let htmlWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+      // console.log("htmlWidth", htmlWidth);
+      //得到html的Dom元素
+      let htmlDom = document.getElementsByTagName("html")[0];
+      if (htmlWidth > 640) {
+        // 跳转到PC端;
+        // window.location.href = "../../index.html";
+        // window.location.href = "http://www.udshare.cn/#/";
+        // htmlDom.style.fontSize = htmlWidth / 32 + "px";
+      }
+    </script>
+  </body>
+</html>
